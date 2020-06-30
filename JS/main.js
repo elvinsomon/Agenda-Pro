@@ -2,13 +2,19 @@ const app = new Vue({
 	el: '#app',
 	data: {
 		titulo: 'Agenda Pro',
+		btnEdicion: 'Editar',
 		contactos: [],
 		contactoNombre: '',
 		contactoTelefono: '',
 		contactoInsta: '',
 	},
 	methods: {
-		agregarContacto: function (params) {
+		limpiar: function () {
+			this.contactoNombre = '';
+			this.contactoTelefono = '';
+			this.contactoInsta = '';
+		},
+		agregarContacto: function () {
 			//console.log('Clik', this.nuevoContacto);
 			this.contactos.push({
 				nombre: this.contactoNombre,
@@ -17,15 +23,25 @@ const app = new Vue({
 			});
 
 			console.log(this.contactos);
-			this.contactoNombre = '';
-			this.contactoTelefono = '';
-			this.contactoInsta = '';
+			this.limpiar();
 		},
+		//Falta de pruebas
 		mostrarContacto: function (index) {
-			console.log('editar', index);
-			this.contactoNombre = this.contactos[index].nombre;
-			this.contactoTelefono = this.contactos[index].telefono;
-			this.contactoInsta = this.contactos[index].insta;
+			if (this.contactoNombre === '') {
+				this.contactoNombre = this.contactos[index].nombre;
+				this.contactoTelefono = this.contactos[index].telefono;
+				this.contactoInsta = this.contactos[index].insta;
+				this.btnEdicion = 'Actualizar';
+			} else {
+				this.editarContacto(index);
+			}
+		},
+		editarContacto: function (index) {
+			this.contactos[index].nombre = this.contactoNombre;
+			this.contactos[index].telefono = this.contactoTelefono;
+			this.contactos[index].insta = this.contactoInsta;
+			this.btnEdicion = 'Editar';
+			this.limpiar();
 		},
 	},
 });

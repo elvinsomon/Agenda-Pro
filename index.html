@@ -23,6 +23,7 @@
 				v-on:keyup.enter="agregarContacto"
 			/>
 
+			<!--Agregar mascara-->
 			<input
 				type="text"
 				class="form-control my-3"
@@ -52,9 +53,9 @@
 						<div>
 							<button
 								class="btn btn-success btn-sm"
-								@click="editarContacto(index)"
+								@click="mostrarContacto(index)"
 							>
-								Editar
+								{{btnEdicion}}
 							</button>
 							<button class="btn btn-danger btn-sm">X</button>
 						</div>

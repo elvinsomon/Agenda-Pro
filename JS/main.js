@@ -7,6 +7,7 @@ const app = new Vue({
 		contactoNombre: '',
 		contactoTelefono: '',
 		contactoInsta: '',
+		seleccionado: false,
 	},
 	methods: {
 		limpiar: function () {
@@ -16,6 +17,8 @@ const app = new Vue({
 		},
 		agregarContacto: function () {
 			//console.log('Clik', this.nuevoContacto);
+
+			//Validaciones
 			this.contactos.push({
 				nombre: this.contactoNombre,
 				telefono: this.contactoTelefono,
@@ -32,6 +35,7 @@ const app = new Vue({
 				this.contactoTelefono = this.contactos[index].telefono;
 				this.contactoInsta = this.contactos[index].insta;
 				this.btnEdicion = 'Actualizar';
+				this.contactos[index].seleccionado = true;
 			} else {
 				this.editarContacto(index);
 			}
@@ -42,6 +46,10 @@ const app = new Vue({
 			this.contactos[index].insta = this.contactoInsta;
 			this.btnEdicion = 'Editar';
 			this.limpiar();
+		},
+		eliminar: function (index) {
+			console.log(index);
+			this.contactos.splice(index, 1);
 		},
 	},
 });

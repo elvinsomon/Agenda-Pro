@@ -25,8 +25,8 @@ const app = new Vue({
 				insta: this.contactoInsta,
 			});
 
-			console.log(this.contactos);
 			this.limpiar();
+			localStorage.setItem('agenda-pro', JSON.stringify(this.contactos));
 		},
 		//Falta de pruebas
 		mostrarContacto: function (index) {
@@ -46,10 +46,22 @@ const app = new Vue({
 			this.contactos[index].insta = this.contactoInsta;
 			this.btnEdicion = 'Editar';
 			this.limpiar();
+			localStorage.setItem('agenda-pro', JSON.stringify(this.contactos));
 		},
 		eliminar: function (index) {
 			console.log(index);
 			this.contactos.splice(index, 1);
+			localStorage.setItem('agenda-pro', JSON.stringify(this.contactos));
 		},
+	},
+	created: function () {
+		let datosDB = JSON.parse(localStorage.getItem('agenda-pro'));
+		console.log(datosDB);
+
+		if (datosDB === null) {
+			this.contactos = [];
+		} else {
+			this.contactos = datosDB;
+		}
 	},
 });

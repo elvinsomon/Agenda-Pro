@@ -64,6 +64,7 @@ const app = new Vue({
 			this.contactos[index].insta = this.contactoInsta;
 			this.btnEdicion = 'Editar';
 			this.limpiar();
+
 			localStorage.setItem('agenda-pro', JSON.stringify(this.contactos));
 		},
 		eliminar: function (index) {

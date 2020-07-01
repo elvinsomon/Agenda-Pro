@@ -17,7 +17,7 @@ body {
 	font-size: 72px;
 	line-height: 90px;
 	color: #575353;
-	text-shadow: 3px 6px 4px rgba(0, 0, 0, 0.25);
+	text-shadow: 3px 5px 4px rgba(0, 0, 0, 0.171);
 }
 .logo {
 	width: 100px;
@@ -103,7 +103,7 @@ input:focus ~ .linea::before {
 }
 .boton:hover {
 	background-color: #d1787b;
-	border-color: #c46568;
+	border: 2px solid #bd5f62;
 }
 .boton:active {
 	background-color: #d1787b;
@@ -117,14 +117,20 @@ input:focus ~ .linea::before {
 
 table {
 	width: 560px !important;
+	border-radius: 12px;
+	box-shadow: 10px 8px 30px rgba(76, 83, 94, 0.219);
 }
 th {
-	font-style: bold !important;
 	font-size: 18px;
+	font-weight: 700;
 }
-
+thead tr {
+}
 .head-table {
 	box-shadow: 1px 6px 4px rgba(58, 76, 105, 0.199);
+	background-image: linear-gradient(120deg, #ebedee 0%, #fdfbfb 100%);
+	border-style: none;
+	border: none;
 }
 
 .boton-edit {
@@ -136,8 +142,8 @@ th {
 	border-color: #405e79;
 }
 .boton-edit:active {
-	background-color: #27425a;
-	border-color: #27425a;
+	background-color: #27425a !important;
+	border-color: #27425a !important;
 }
 
 .boton-delete {

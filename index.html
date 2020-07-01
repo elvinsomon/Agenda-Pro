@@ -73,6 +73,7 @@
 									type="text"
 									class=""
 									placeholder="Teléfono"
+									id="telefono"
 									v-model="contactoTelefono"
 									v-on:keyup.enter="agregarContacto"
 								/><span class="linea"></span>
@@ -95,17 +96,11 @@
 						<div class="botones">
 							<button
 								type="submit"
+								id="boton-submit"
 								class="btn btn-primary boton"
 								@click="agregarContacto"
 							>
 								Nuevo Contacto
-							</button>
-							<button
-								type="submit"
-								class="btn btn-primary boton-actualizar"
-								@click=""
-							>
-								Actualizar
 							</button>
 						</div>
 					</div>
@@ -113,7 +108,7 @@
 
 				<div>
 					<table class="table table-light table-hover">
-						<thead class="thead-light">
+						<thead class="thead-light head-table">
 							<tr>
 								<th>Nombre</th>
 								<th>Número</th>
@@ -184,6 +179,8 @@
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="./JS/jquery-3.5.1.js"></script>
+		<script src="./JS/jquery.mask.js"></script>
 		<script src="./JS/main.js"></script>
 	</body>
 </html>

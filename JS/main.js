@@ -1,5 +1,9 @@
+$(document).ready(function () {
+	$('#telefono').mask('000-000-0000');
+});
 let txtNombre = document.getElementById('txtNombre');
 txtNombre.focus();
+
 const app = new Vue({
 	el: '#app',
 	data: {
@@ -16,16 +20,15 @@ const app = new Vue({
 			this.contactoTelefono = '';
 			this.contactoInsta = '';
 		},
+		// -- AGREGAR --
 		agregarContacto: function () {
-			//console.log('Clik', this.nuevoContacto);
-
 			//Validaciones
 			if (
 				this.contactoNombre === '' ||
 				this.contactoTelefono === '' ||
 				this.contactoInsta === ''
 			) {
-				alert('Todos los campos son requeridos!');
+				alert('¡Todos los campos son requeridos!');
 			} else {
 				this.contactos.push({
 					nombre: this.contactoNombre,
@@ -42,16 +45,17 @@ const app = new Vue({
 		//Falta de pruebas
 		mostrarContacto: function (index) {
 			if (this.contactoNombre === '') {
+				document.getElementById('boton-submit').disabled = true;
+				this.contactos[index].seleccionado = true;
 				this.contactoNombre = this.contactos[index].nombre;
 				this.contactoTelefono = this.contactos[index].telefono;
 				this.contactoInsta = this.contactos[index].insta;
 				this.btnEdicion = 'Actualizar';
-				this.contactos[index].seleccionado = true;
 				this.txtNombre.focus();
-				document.getElementById('boton-submit').disabled = true;
 			} else {
 				this.editarContacto(index);
 				this.contactos[index].seleccionado = false;
+				document.getElementById('boton-submit').disabled = false;
 			}
 		},
 		editarContacto: function (index) {

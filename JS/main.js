@@ -50,8 +50,6 @@ const app = new Vue({
 				this.contactoNombre = this.contactos[index].nombre;
 				this.contactoTelefono = this.contactos[index].telefono;
 				this.contactoInsta = this.contactos[index].insta;
-				this.btnEdicion = 'Actualizar';
-				this.txtNombre.focus();
 			} else {
 				this.editarContacto(index);
 				this.contactos[index].seleccionado = false;

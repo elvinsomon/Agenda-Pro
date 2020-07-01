@@ -24,6 +24,11 @@ body {
 	height: 100px;
 	fill: #7b7e83;
 }
+
+.animate__animated.animate__fadeIn {
+	--animate-duration: 1.5s;
+}
+
 .icons {
 	width: 38px;
 	height: 38px;

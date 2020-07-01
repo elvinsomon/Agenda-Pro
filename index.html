@@ -13,12 +13,16 @@
 			href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+		/>
 		<link rel="stylesheet" href="./styles/styles.css" />
 		<title>Agenda Pro</title>
 	</head>
 	<body>
 		<div class="container-md" id="app">
-			<div class="titulo">
+			<div class="titulo animate__animated animate__fadeInLeft">
 				<h1>
 					{{titulo}}
 
@@ -49,7 +53,7 @@
 				</h1>
 			</div>
 			<div class="principal-container">
-				<div class="tit-form">
+				<div class="tit-form animate__animated animate__fadeIn">
 					<div class="form">
 						<div class="control">
 							<img class="icons" src="./img/name.png" alt="" />
@@ -107,7 +111,9 @@
 				</div>
 
 				<div>
-					<table class="table table-light table-hover">
+					<table
+						class="table table-light table-hover animate__animated animate__fadeIn"
+					>
 						<thead class="">
 							<tr class="head-table">
 								<th>Nombre</th>
@@ -147,34 +153,6 @@
 						</tbody>
 					</table>
 				</div>
-
-				<!-- 
-				<div
-					class="col container-md align-self-center mt-3"
-					v-for="(item, index) of contactos"
-				>
-					<div
-						role="alert"
-						:class="['alert', item.seleccionado ? 'alert-success' : 'alert-danger']"
-					>
-						<div class="d-flex justify-content-between aling-item-center">
-							<div>
-								{{index}} - {{item.nombre}} - {{item.telefono}} - {{item.insta}}
-							</div>
-							<div>
-								<button
-									class="btn btn-success btn-sm"
-									@click="mostrarContacto(index)"
-								>
-									{{btnEdicion}}
-								</button>
-								<button class="btn btn-danger btn-sm" @click="eliminar(index)">
-									X
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>-->
 			</div>
 		</div>
 

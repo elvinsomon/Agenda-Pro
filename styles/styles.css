@@ -1,0 +1,154 @@
+body {
+	font-family: 'Quicksand', sans-serif;
+	background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.principal-container {
+	height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.titulo h1 {
+	position: absolute;
+	margin-top: 100px;
+	font-weight: 500;
+	font-size: 72px;
+	line-height: 90px;
+	color: #575353;
+	text-shadow: 3px 6px 4px rgba(0, 0, 0, 0.25);
+}
+.logo {
+	width: 100px;
+	height: 100px;
+	fill: #585b5f;
+}
+.icons {
+	width: 40px;
+	height: 40px;
+}
+.icons-table {
+	height: 25px;
+	width: 25px;
+}
+.form {
+	width: 300px;
+}
+.control {
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	position: relative;
+}
+.grupo {
+	margin-left: 10px;
+}
+input {
+	width: 230px;
+	height: 30px;
+	display: block;
+	border: none;
+	padding: 10px 10px 10px 5px;
+	background: none;
+	font-size: 18px;
+	font-weight: 300;
+	border-bottom: 1px solid #8a4759;
+	transition: 0.5s ease-in-out all;
+}
+input:focus {
+	outline: none;
+	color: gray;
+}
+
+.linea {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+.linea::before {
+	content: '';
+	height: 2.5px;
+	width: 0%;
+	bottom: 0;
+	position: absolute;
+	background: #733646;
+	transition: 0.3s ease width;
+	left: 0;
+}
+input:focus ~ .linea::before {
+	width: 100%;
+}
+
+.botones {
+	display: flex;
+	justify-content: space-between;
+}
+.boton {
+	height: 42px;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	background-color: #dc9698;
+	border-color: #dc9698;
+	border-style: none;
+	color: white;
+	border-radius: 16px;
+	margin-top: 30px;
+	transition: 0.2s;
+}
+.boton:hover {
+	background-color: #d1787b;
+	border-color: #c46568;
+}
+.boton::active {
+	background-color: yellow;
+}
+.boton-actualizar {
+	height: 42px;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	background-color: transparent;
+	color: black;
+	border: 2px solid #394b68;
+	border-radius: 16px;
+	margin-top: 30px;
+}
+.boton-actualizar:hover {
+	background-color: #6a8aa6;
+	border-color: #394b68;
+	color: white;
+}
+
+table {
+	width: 560px !important;
+}
+th {
+	background-color: rgb(58, 76, 105) !important;
+	color: white !important;
+	box-shadow: 1px 6px 4px rgba(58, 76, 105, 0.199);
+}
+
+.boton-edit {
+	background-color: #6a8aa6;
+	border-color: #6a8aa6;
+}
+.boton-edit:hover {
+	background-color: #405e79;
+	border-color: #405e79;
+}
+.boton-delete {
+	background-color: #b82a50;
+	border-color: #b82a50;
+}
+.boton-delete:hover {
+	background-color: #8d1c3a;
+	border-color: #922441;
+}

@@ -1,8 +1,9 @@
+let txtNombre = document.getElementById('txtNombre');
+txtNombre.focus();
 const app = new Vue({
 	el: '#app',
 	data: {
 		titulo: 'Agenda Pro',
-		btnEdicion: 'Editar',
 		contactos: [],
 		contactoNombre: '',
 		contactoTelefono: '',
@@ -19,14 +20,24 @@ const app = new Vue({
 			//console.log('Clik', this.nuevoContacto);
 
 			//Validaciones
-			this.contactos.push({
-				nombre: this.contactoNombre,
-				telefono: this.contactoTelefono,
-				insta: this.contactoInsta,
-			});
+			if (
+				this.contactoNombre === '' ||
+				this.contactoTelefono === '' ||
+				this.contactoInsta === ''
+			) {
+				alert('Todos los campos son requeridos!');
+			} else {
+				this.contactos.push({
+					nombre: this.contactoNombre,
+					telefono: this.contactoTelefono,
+					insta: this.contactoInsta,
+				});
 
-			this.limpiar();
-			localStorage.setItem('agenda-pro', JSON.stringify(this.contactos));
+				this.limpiar();
+				localStorage.setItem('agenda-pro', JSON.stringify(this.contactos));
+				let txtNombre = document.getElementById('txtNombre');
+				txtNombre.focus();
+			}
 		},
 		//Falta de pruebas
 		mostrarContacto: function (index) {
@@ -36,8 +47,11 @@ const app = new Vue({
 				this.contactoInsta = this.contactos[index].insta;
 				this.btnEdicion = 'Actualizar';
 				this.contactos[index].seleccionado = true;
+				this.txtNombre.focus();
+				document.getElementById('boton-submit').disabled = true;
 			} else {
 				this.editarContacto(index);
+				this.contactos[index].seleccionado = false;
 			}
 		},
 		editarContacto: function (index) {

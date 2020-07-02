@@ -42,7 +42,7 @@ const app = new Vue({
 				txtNombre.focus();
 			}
 		},
-		//Falta de pruebas
+		// -- MOSTRAR --
 		mostrarContacto: function (index) {
 			if (this.contactoNombre === '') {
 				document.getElementById('boton-submit').disabled = true;
@@ -56,6 +56,7 @@ const app = new Vue({
 				document.getElementById('boton-submit').disabled = false;
 			}
 		},
+		// -- EDITAR --
 		editarContacto: function (index) {
 			this.contactos[index].nombre = this.contactoNombre;
 			this.contactos[index].telefono = this.contactoTelefono;
@@ -65,12 +66,13 @@ const app = new Vue({
 
 			localStorage.setItem('agenda-pro', JSON.stringify(this.contactos));
 		},
+		// -- ELIMINAR --
 		eliminar: function (index) {
-			console.log(index);
 			this.contactos.splice(index, 1);
 			localStorage.setItem('agenda-pro', JSON.stringify(this.contactos));
 		},
 	},
+	// -- GUARDAR EN LOCAL --
 	created: function () {
 		let datosDB = JSON.parse(localStorage.getItem('agenda-pro'));
 		console.log(datosDB);

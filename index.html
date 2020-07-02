@@ -60,7 +60,6 @@
 							<div class="grupo">
 								<input
 									type="text"
-									class=""
 									id="txtNombre"
 									placeholder="Nombre"
 									v-model="contactoNombre"
@@ -72,10 +71,8 @@
 						<div class="control">
 							<img class="icons" src="./img/phone.png" alt="" />
 							<div class="grupo">
-								<!--Agregar mascara-->
 								<input
 									type="text"
-									class=""
 									placeholder="Teléfono"
 									id="telefono"
 									v-model="contactoTelefono"
@@ -89,7 +86,6 @@
 							<div class="grupo">
 								<input
 									type="text"
-									class=""
 									placeholder="Instagram"
 									v-model="contactoInsta"
 									v-on:keyup.enter="agregarContacto"
@@ -122,6 +118,7 @@
 								<th></th>
 							</tr>
 						</thead>
+
 						<tbody v-for="(item, index) of contactos">
 							<tr :class="[ item.seleccionado ? 'table-info' : ' ']">
 								<td>{{item.nombre}}</td>
